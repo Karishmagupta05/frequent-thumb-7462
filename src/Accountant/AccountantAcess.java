@@ -1,6 +1,7 @@
 package Accountant;
 
 import java.util.Scanner;
+//day2
 
 import BankingDao.BankingSys;
 import BankingDao.BankingSysImp;
