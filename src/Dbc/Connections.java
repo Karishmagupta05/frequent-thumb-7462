@@ -17,7 +17,7 @@ public class Connections {
 		}
 		
 		try {
-			 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banking", "root", "root");
+			 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banking", "root", "rootroot");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

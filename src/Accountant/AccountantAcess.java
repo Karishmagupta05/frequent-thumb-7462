@@ -13,36 +13,38 @@ public class AccountantAcess {
 		Scanner sc= new Scanner (System.in);
 		BankingSysImp ban= new BankingSysImp();
 		
-		System.out.println("Enter email id---");
+		System.out.println("Enter email id : ");
 		String email=sc.next();
-		System.out.println("Enter pass---");
+		System.out.println("Enter password : ");
 		int pass=sc.nextInt();
 		ban.checkAct(email,pass);
 		
 		
 		while(ban.getFlag()) {
-	System.out.println("Enter your choice----");
+			
+	    System.out.println("Enter your choice: ");
+		System.out.println("***************************");
 		System.out.println("1.Adding new customer");
 		System.out.println("2.Editing existing account");
 		System.out.println("3.Remove existing account");
 		System.out.println("4.Viewing particular account detai by giving account number");
 		System.out.println("5.Viewing all accounts");
 		System.out.println("6.Exit");
-		
+		System.out.println("***************************");
 int choice=sc.nextInt();
 if(choice==6)break;
 else if(choice==1) {
-	System.out.println("Enter account number");
+	System.out.println("Enter Account Number");
 	int act=sc.nextInt();
-	System.out.println("Enter customer name-- ");
+	System.out.println("Enter Customer Name :  ");
 	sc.nextLine();
 	String name= sc.nextLine();
 	
-	System.out.println("Enter customer email ---");
+	System.out.println("Enter Customer Email : ");
 	String emai=sc.next();
-	System.out.println("Set customer pass----");
+	System.out.println("Set Customer Password : ");
 	int ps=sc.nextInt();
-	System.out.println("Set customer balance----");
+	System.out.println("Set Customer Balance : ");
 	int bal=sc.nextInt();
 	ban.insertCus(act, name, emai, ps, bal);
 	
