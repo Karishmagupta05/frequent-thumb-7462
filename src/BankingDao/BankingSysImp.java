@@ -45,10 +45,10 @@ public boolean getFlag() {
 		
 		if(em.equalsIgnoreCase(email)&& password==ps) {
 			flag= true;
-			System.out.println("login sucessful from accountant id ");
+			System.out.println("Login Sucessful From Accountant id ");
 			
 		}
-		else System.out.println("invalid crediantials!!");
+		else System.out.println("Invalid Crediantials!!");
 	}
 		}
 		catch(SQLException ex) {
