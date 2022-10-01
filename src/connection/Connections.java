@@ -1,4 +1,4 @@
-package Dbc;
+package connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ public class Connections {
 
 	
 	public static Connection getConnection() {
-		Connection con=null;
+		Connection cont=null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
@@ -17,17 +17,14 @@ public class Connections {
 		}
 		
 		try {
-			 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/banking", "root", "rootroot");
+			 cont = DriverManager.getConnection("jdbc:mysql://localhost:3306/Onlinebanking", "root", "rootroot");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	
 		
-		
-		
-		//System.out.println("con");
-		
-		return con;
+		return cont;
 	}
 }

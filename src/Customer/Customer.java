@@ -1,4 +1,4 @@
-package CusDetail;
+package Customer;
 
 public class Customer {
 

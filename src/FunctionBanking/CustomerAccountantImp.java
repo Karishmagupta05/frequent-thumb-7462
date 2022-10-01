@@ -1,13 +1,14 @@
-package BankingDao;
+package FunctionBanking;
 
+import connection.Connections;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import Dbc.Connections;
 
-public class BankingSysImp implements BankingSys {
+
+public class CustomerAccountantImp implements CustomerAccountant {
 	 boolean flag=false;
 	int count=0;
 		int act=0;
@@ -52,7 +53,8 @@ public boolean getFlag() {
 		
 		if(em.equalsIgnoreCase(email)&& password==ps) {
 			flag= true;
-			System.out.println("Login Sucessful From Accountant id ");
+				System.out.println("---From Accountant Id---");
+		    	System.out.println("---Login Sucessfully---");
 			
 		}
 		else System.out.println("Invalid Crediantials!!");
@@ -66,7 +68,7 @@ public boolean getFlag() {
 	}
 
 	@Override
-	public void insertCus(int cusId,String name, String cusEmail, int pass, int bal) {
+	public void insertCustomer(int cusId,String name, String cusEmail, int pass, int bal) {
 		System.out.println(count);
 	 if(flag) {
 		 Connection con=Connections.getConnection();
@@ -300,7 +302,7 @@ public boolean getFlag() {
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-	System.out.println("Transaction not successful!!");
+	//System.out.println("Transaction not successful!!");
 		}
 	}
 
@@ -384,14 +386,13 @@ int finalrs=rup-rsa;
 	
 
 	@Override
-	public void loginCus(String em, int ps) {
+	public void loginCustomer(String em, int ps) {
 		count++;
 		
 		Connection con=Connections.getConnection();
 		try {
 			PreparedStatement act=con.prepareStatement("select * from customer");
 			ResultSet rs= act.executeQuery();
-			//System.out.println(rs);
 			while(rs.next()) {
 				
 			String email=	rs.getString("email");
@@ -402,7 +403,8 @@ int finalrs=rup-rsa;
 		if(em.equalsIgnoreCase(email)&& password==ps) {
 			flag= true;
 			this.act=rs.getInt("actNo");
-			System.out.println("login sucessful from customer id ");
+			System.out.println("---From Customer Id---");
+			System.out.println("---Login Sucessfully---");
 			return;
 			
 		}
@@ -417,7 +419,7 @@ int finalrs=rup-rsa;
 }
 
 	@Override
-	public void showhis(int act) {
+	public void showtrans(int act) {
 Connection con=Connections.getConnection();
 
 try {
